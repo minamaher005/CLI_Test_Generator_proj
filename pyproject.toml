@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "testgen"
+version = "0.1.0"
+description = "Agentic Python unittest generator - an LLM agent that writes, runs, and repairs tests until they pass"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "ollama>=0.4",
+    "python-dotenv>=1.0",
+    "rich>=13.0",
+    "pytest>=8.0",
+    "coverage>=7.0",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5"]
+
+[project.scripts]
+testgen = "testgen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# BLE001: the tool registry must survive any tool failure by design.
+# PLW1510: check=False is intentional - exit codes are inspected, not raised.
+# RUF012: JSON-schema class attributes are shared dicts.
+ignore = ["BLE001", "PLW1510", "RUF012", "RUF059"]
