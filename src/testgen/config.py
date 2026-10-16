@@ -12,7 +12,7 @@ class Config:
     """Central configuration. Environment-provided defaults, overridable via CLI flags."""
 
     provider: str = "ollama"
-    model: str = "qwen3-coder-next"
+    model: str = "gemma4:31b-cloud"
     temperature: float = 0.0
     max_iterations: int = 5
     coverage_threshold: float = 80.0
@@ -26,7 +26,7 @@ class Config:
         load_dotenv()
         return cls(
             provider=os.environ.get("TESTGEN_PROVIDER", "ollama"),
-            model=os.environ.get("TESTGEN_MODEL", "qwen3-coder-next"),
+            model=os.environ.get("TESTGEN_MODEL", "gemma4:31b-cloud"),
             temperature=float(os.environ.get("TESTGEN_TEMPERATURE", "0")),
             max_iterations=int(os.environ.get("TESTGEN_MAX_ITERATIONS", "5")),
             coverage_threshold=float(os.environ.get("TESTGEN_COVERAGE_THRESHOLD", "80")),

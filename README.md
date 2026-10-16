@@ -95,7 +95,7 @@ $ testgen tests/fixtures/add.py
 | Flag | Default | Meaning |
 | --- | --- | --- |
 | `--provider` | `ollama` | `ollama` (LLM) or `mock` (offline scripted agent) |
-| `--model` | `qwen3-coder-next` | any Ollama model |
+| `--model` | `gemma4:31b-cloud` | any Ollama model |
 | `--max-iterations` | `5` | agent loop budget |
 | `--coverage-threshold` | `80` | coverage % target |
 | `--no-coverage` | off | skip the coverage tool |
