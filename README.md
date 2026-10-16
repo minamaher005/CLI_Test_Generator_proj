@@ -1,5 +1,10 @@
 # Microsoft_CLI_Test_Generator
 
+> **v2 (agentic rewrite)** — this repo now also contains [`cli-testgen/`](cli-testgen/README.md),
+> a full rewrite where an **LLM agent** generates tests with native tool calling:
+> it AST-analyzes the module, writes the test file, runs pytest, measures coverage, and
+> repairs its own tests until they pass. v1 (this README) describes the original
+> single-shot pipeline and is kept here for comparison.
 
 A command-line tool that automatically generates Python **unittest** test files for any given Python function — powered by a specialized LLM.
 
