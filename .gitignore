@@ -16,6 +16,10 @@ coverage.json
 # Testgen artifacts
 .testgen/
 
+# Legacy v1 outputs
+generated_code.py
+*_test.py
+
 # Editors / OS
 .vscode/
 .idea/
